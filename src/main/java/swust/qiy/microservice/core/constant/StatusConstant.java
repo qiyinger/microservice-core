@@ -42,14 +42,35 @@ public class StatusConstant {
   /**
    * api
    */
-  public final static byte API_TYPE = 0;
+  public final static byte API_TYPE = 1;
   /**
    * 微服务
    */
-  public final static byte MICRO_TYPE = 1;
+  public final static byte MICRO_TYPE = 0;
 
   public final static byte STRATEGY_IP = 0;
 
   public final static byte STRATEGY_CALL = 1;
+
+  public final static byte CHECK_REFUSE = 0;
+
+  public final static byte CHECK_PENDING = 1;
+
+  public final static byte CHECK_PASS = 2;
+
+  public final static byte ROUTE_MICROSERVICE = 0;
+
+  public final static byte ROUTE_APPLICATION = 1;
+
+  public final static byte ROUTE_SYSTEM = 2;
+
+  // 待发布
+  public final static byte PUBLISH_PENDING = 0;
+  // 已发布
+  public final static byte PUBLISHED = 1;
+  // 正在发布
+  public final static byte PUBLISH_STARTING = 2;
+  // 正在停止
+  public final static byte PUBLISH_STOPING = 3;
 
 }

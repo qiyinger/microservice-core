@@ -22,6 +22,7 @@ public enum ResultCodeEnum {
   RECORD_NOT_EXIST(3005, "记录不存在"),
   DISABLE_DELETE(3006, "存在子模块, 无法删除"),
 
+  REMOTE_CALL_FAILED(4001, "远程调用失败")
   ;
 
   ResultCodeEnum(Integer code, String msg) {

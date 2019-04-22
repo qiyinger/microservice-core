@@ -38,7 +38,7 @@ public class Result<T> {
   public Result fail(ResultCodeEnum codeEnum, String msg) {
     this.success = false;
     this.code = codeEnum.getCode();
-    this.message = codeEnum.getMsg();
+    this.message = msg;
     return this;
   }
 

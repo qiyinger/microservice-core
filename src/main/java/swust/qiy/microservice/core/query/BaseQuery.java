@@ -35,4 +35,5 @@ public abstract class BaseQuery<T> {
   public void setPageSize(long pageSize) {
     this.pageSize = pageSize;
   }
+
 }

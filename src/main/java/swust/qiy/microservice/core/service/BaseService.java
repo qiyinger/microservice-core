@@ -1,7 +1,9 @@
 package swust.qiy.microservice.core.service;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import java.util.List;
+import swust.qiy.microservice.core.dao.BaseDao;
 import swust.qiy.microservice.core.page.PageImpl;
 import swust.qiy.microservice.core.query.BaseQuery;
 import swust.qiy.microservice.core.result.Result;
@@ -12,15 +14,15 @@ import swust.qiy.microservice.core.result.Result;
  */
 public interface BaseService<T> {
 
-  public Result save(T model);
+  public Result<Integer> save(T model);
 
-  public Result deleteById(int id);
+  public Result<Integer> deleteById(int id);
 
-  public Result deleteByIds(List<Integer> ids);
+  public Result<Integer> deleteByIds(List<Integer> ids);
 
-  public Result deleteByIds(String ids);
+  public Result<Integer> deleteByIds(String ids);
 
-  public Result update(T model);
+  public Result<Integer> update(T model);
 
   public Result<T> findById(int id);
 
@@ -37,6 +39,16 @@ public interface BaseService<T> {
   public Result<Integer> count(Wrapper<T> queryWrapper);
 
   public Result<Integer> count(BaseQuery<T> query);
+
+  public BaseDao<T> getBaseMapper();
+
+  public Result<Integer> saveOrUpdateBatch(List<T> list);
+
+  Result<Integer> saveOrUpdateBatch(List<T> list, int num);
+
+  Result checkId(BaseDao baseDao, Integer id);
+
+  Result checkId(Integer id);
 
 
 }

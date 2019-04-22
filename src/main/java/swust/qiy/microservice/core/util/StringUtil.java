@@ -77,5 +77,29 @@ public class StringUtil {
     return CaseFormat.LOWER_CAMEL.to(CaseFormat.UPPER_CAMEL, str);
   }
 
+  public static String trimUrlSuffix(String url) {
+    return trimUrlSuffix(url, true);
+  }
+
+  /**
+   * 去掉url前缀
+   * @param url
+   * @param fillProtocolIfNotPresent
+   * @return
+   */
+  public static String trimUrlSuffix(String url, boolean fillProtocolIfNotPresent) {
+    return trimUrlSuffix(url, fillProtocolIfNotPresent, null);
+  }
+
+  public static String trimUrlSuffix(String url, boolean fillProtocolIfNotPresent, String protocol) {
+    if (StringUtils.isBlank(url)) {
+      return url;
+    }
+    url = url.trim();
+    if (fillProtocolIfNotPresent && url.indexOf("://") <= 0) { //$NON-NLS-1$
+      url = (StringUtils.isBlank(protocol) ? "http" : protocol) + "://" + url; //$NON-NLS-1$ //$NON-NLS-2$
+    }
+    return url.charAt(url.length() - 1) == '/' ? url.substring(0, url.length() - 1) : url; //$NON-NLS-1$
+  }
 
 }
