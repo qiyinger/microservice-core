@@ -14,6 +14,7 @@ public enum ResultCodeEnum {
   NULL_POINT_EXECPTION(2001, "空指针"),
   DB_EXCEPTION(2001, "数据库异常"),
   SYSTEM_ERROR(2003, "系统错误"),
+  UNKNOWN(2004, "未知错误"),
 
   PARAM_ERROR(3001, "参数错误"),
   INVALID_OPERATION(3002, "非法操作"),
@@ -22,7 +23,9 @@ public enum ResultCodeEnum {
   RECORD_NOT_EXIST(3005, "记录不存在"),
   DISABLE_DELETE(3006, "存在子模块, 无法删除"),
 
-  REMOTE_CALL_FAILED(4001, "远程调用失败")
+  REMOTE_CALL_FAILED(4001, "远程调用失败"),
+
+  PUBLISH_ROUTE_FAIL(5001, "发布路由失败")
   ;
 
   ResultCodeEnum(Integer code, String msg) {

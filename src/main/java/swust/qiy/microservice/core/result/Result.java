@@ -42,6 +42,13 @@ public class Result<T> {
     return this;
   }
 
+  public Result fail(Integer code, String msg) {
+    this.success = false;
+    this.code = code;
+    this.message = msg;
+    return this;
+  }
+
   public T getData() {
     return data;
   }

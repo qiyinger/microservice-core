@@ -11,6 +11,7 @@ import swust.qiy.microservice.core.enums.ResultCodeEnum;
 import swust.qiy.microservice.core.page.PageImpl;
 import swust.qiy.microservice.core.query.BaseQuery;
 import swust.qiy.microservice.core.result.Result;
+import swust.qiy.microservice.core.result.ResultAsset;
 import swust.qiy.microservice.core.result.ResultUtil;
 import swust.qiy.microservice.core.service.BaseService;
 import swust.qiy.microservice.core.util.StringUtil;
@@ -118,9 +119,7 @@ public class BaseServiceImpl<T> implements BaseService<T> {
   @Override
   public Result checkId(BaseDao baseDao, Integer id) {
     Object obj = baseDao.selectById(id);
-    if (obj == null) {
-      return ResultUtil.create(ResultCodeEnum.RECORD_NOT_EXIST);
-    }
+    ResultAsset.notNull(obj, ResultCodeEnum.RECORD_NOT_EXIST, "Id不存在");
     return ResultUtil.success(obj);
   }
 

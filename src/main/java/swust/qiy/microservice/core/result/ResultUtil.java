@@ -24,5 +24,9 @@ public class ResultUtil {
     return new Result().fail(resultCodeEnum);
   }
 
+  public static Result create(Integer code, String msg) {
+    return new Result().fail(code, msg);
+  }
+
 
 }

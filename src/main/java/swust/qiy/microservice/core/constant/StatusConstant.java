@@ -60,7 +60,7 @@ public class StatusConstant {
 
   public final static byte ROUTE_MICROSERVICE = 0;
 
-  public final static byte ROUTE_APPLICATION = 1;
+  public final static byte ROUTE_API = 1;
 
   public final static byte ROUTE_SYSTEM = 2;
 
@@ -72,5 +72,11 @@ public class StatusConstant {
   public final static byte PUBLISH_STARTING = 2;
   // 正在停止
   public final static byte PUBLISH_STOPING = 3;
+
+
+  public final static byte IP_WHITE = 0;
+  public final static byte IP_BLACK = 1;
+
+
 
 }
